@@ -1,4 +1,4 @@
-// 완주 하지 못한 선수
+// 완주 하지 못한 선수 - 프로그래머스 lv1
 // https://programmers.co.kr/learn/courses/30/lessons/42576
 
 // 제한시간 30분
