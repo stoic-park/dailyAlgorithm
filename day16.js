@@ -75,10 +75,17 @@ function solution(p) {
       }
       // 올바른 괄호일 경우
       else {
-        answer += p.slice(0, i + 1);
+        answer += p.slice(0, i + 1); // 그대로
         answer += solution(p.slice(i + 1, p.length));
         return answer;
       }
     }
   }
 }
+
+// 후기
+// 선형적으로 직관적으로 해결하려 했으나
+// 스택? 이라는 개념이 자꾸 떠올라서
+// 문제 분석하는데에만 시간을 아주..
+// 결국 시간 내에 해결하지 못하고 보다가 다른 사람들의 풀이를 봤다
+// 문제에 주어진 조건들을 그대로 구현한 듯한 느낌이 들었다
