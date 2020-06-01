@@ -70,5 +70,11 @@ function solution(priorities, location) {
 }
 
 // while문의 사용
+// while(true) : 특정 조건을 만족할 때까지 반복문을 실행하고 싶을 때!
+let num = 0;
+while (true) {
+  num = num * 2 + 1;
+  if (num > 10000) break;
+}
 // 객체를 이용한 풀이
 // some이라는 메소드
