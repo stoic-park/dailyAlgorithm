@@ -75,3 +75,6 @@ function checkCam(route, cameras) {
   }
   return false;
 }
+
+// 참고 블로그
+// https://taesan94.tistory.com/156
