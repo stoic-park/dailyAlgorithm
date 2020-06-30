@@ -54,7 +54,14 @@ function solution(N) {
     }
     return last;
   }
-
+  // 피보나찌 2
+  //   function fibo(n) {
+  //     let arr = [0, 1];
+  //     for (let i = 2; i <= n; i++) {
+  //       arr.push(arr[i - 1] + arr[i - 2]);
+  //     }
+  //     return arr[n];
+  //   }
   // 2. 둘레 구하기
   // 최대값 x2 + (그다음 최대값 + 최대값) x2
   let length = box.length;
@@ -85,3 +92,8 @@ function solution(N) {
 
   return fibo[N - 1];
 }
+
+// reference
+// 동적 계획법
+// 조금 장난스럽게 말해서 답을 재활용하는 거다. 앞에서 구했던 답을 뒤에서도 이용하고, 옆에서도 이용하고...엄밀히 말해 동적 계획법은 구체적인 알고리즘이라기보다는 문제해결 패러다임에 가깝다. 동적 계획법은 "어떤 문제를 풀기 위해 그 문제를 더 작은 문제의 연장선으로 생각하고, 과거에 구한 해를 활용하는" 방식의 알고리즘을 총칭한다.
+// https://namu.wiki/w/%EB%8F%99%EC%A0%81%20%EA%B3%84%ED%9A%8D%EB%B2%95
