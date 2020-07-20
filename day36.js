@@ -43,10 +43,10 @@ function solution(s) {
       else stack.pop();
     }
   }
+  if (stack.length !== 0) {
+    return false;
+  }
 
-  if (stack.length === 0) {
-    return true;
-  } else return false;
   return answer;
 }
 

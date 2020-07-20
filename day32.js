@@ -90,6 +90,6 @@ function solution(clothes) {
 // 메소드 사용이 돋보이는 풀이였다
 // 1. clothes.reduce(function, {}) : 최초값을 빈 객체로 생성, clothes를 순차적으로 키값 검색
 // 2. undefined 는 논리연산에서 false이므로 해당 키의 값이 undefined이면 해당 키값에 1을 넣어줌
-// 3. 생성된 key와 value를 Object.values를 통해 값만 불러옴
+// ! 3. 생성된 key와 value를 Object.values를 통해 값만 불러옴
 // 4. reduce(function, 1) 최초 값을 1로 설정하고 배열을 순차적으로 돌며 (이전 값 + 1) 을 곱함
 // 5. 모든 옷을 입지 않은 경우 -1
