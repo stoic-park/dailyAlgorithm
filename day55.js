@@ -42,7 +42,6 @@ let canJump = function (nums) {
       targetIndex = i;
     }
   }
-
   if (targetIndex === 0) return true;
   else return false;
 };
