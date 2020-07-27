@@ -90,12 +90,16 @@ var cloneGraph = function (node) {
   function recur(node) {
     // if (answer[node.val]) return answer[node.val];
     // val:1 에 해당하는 키에 값이 없을 경우
+    if (!node) return node;
+
     if (!answer[node.val]) {
       // val:1, neighbors : [] 인 새로운 노드를 값으로 넣어준다
       answer[node.val] = new Node(node.val);
       // answer = { '1': { val: 1, neighbors: [] } }
       // node.neighbors = [ { val: 2, neighbors: [Array] }, { val: 4, neighbors: [Array] } ]
-      answer[node.val].neighbors = node.neighbors.map(recur);
+      //   answer[node.val].neighbors = node.neighbors.map(recur);
+      answer[node.val].neighbors[0] = recur(node.neighbors[0]);
+      answer[node.val].neighbors[1] = recur(node.neighbors[1]);
     }
     return answer[node.val];
   }
