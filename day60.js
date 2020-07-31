@@ -54,6 +54,7 @@ var groupAnagrams = function (strs) {
     }
   }
 
+  //   console.log(map);
   return [...map.values()];
 };
 
