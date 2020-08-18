@@ -19,7 +19,7 @@
 // ]
 
 // 분석
-// [1,2,3]
+// [1,2,3], []
 // 1, 23
 // 12, 3
 // 123
@@ -47,7 +47,6 @@ var permute = function (nums) {
     // 재귀가 끝나는 조건
     // 나머지의 길이가 0 일 경우
     if (rest.length === 0) result.push(target);
-
     // 재귀
     for (let i = 0; i < rest.length; i++) {
       //   let nextRest = [...rest].splice(i, 1); //
@@ -56,9 +55,7 @@ var permute = function (nums) {
       recur(target.concat(rest[i]), nextRest);
     }
   }
-
   recur([], nums);
-
   return result;
 };
 
