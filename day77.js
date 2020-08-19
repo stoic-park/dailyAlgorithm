@@ -35,21 +35,44 @@
  * @return {string[]}
  */
 var letterCombinations = function (digits) {
-  // 결과를 담을 배열
-  let result = [];
-  // 숫자에 해당하는 문자열을 담은 객체
-  let box = {
-    2: [a, b, c],
-    3: [d, e, f],
-    4: [g, h, i],
-    5: [j, k, i],
-    6: [m, n, o],
-    7: [p, q, r, s],
-    8: [t, u, v],
-    9: [w, x, y, z],
+  // 2~9자리의 숫자로 이루어진 스트링 파라미터가 주어진다.
+  // 각 숫자에 해당하는 문자를 객체로 나타내서 해당 문자를 가져올 수 있도록 한다.
+  // 나타낼 수 있는 문자만을 담은 배열로 바꿔서 반복에 용이한 값을 만든다
+  const box = {
+    2: ["a", "b", "c"],
+    3: ["d", "e", "f"],
+    4: ["g", "h", "i"],
+    5: ["j", "k", "l"],
+    6: ["m", "n", "o"],
+    7: ["p", "q", "r", "s"],
+    8: ["t", "u", "v"],
+    9: ["w", "x", "y", "z"],
   };
 
-  //
+  // 결과를 담을 배열
+  let result = [];
+
+  function recur(str, index) {
+    // 재귀가 끝나는 조건
+    // 인덱스가 digits길이와 같아지면
+    if (index === digits.length) {
+      result.push(str);
+      //! 여기서 리턴해주지 않으면 계속 런타임 에러 발생
+      return;
+    }
+
+    let target = digits[index];
+    // 알파벳 반복
+    for (let el of box[target]) {
+      recur(str + el, index + 1);
+    }
+  }
+
+  // 재귀 시작
+  recur("", 0);
+  // return result;
+
+  return digits.length === 0 ? [] : result;
 };
 
 // solution1 - backtracking (video)
